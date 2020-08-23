@@ -9,6 +9,7 @@ brew install \
   rbenv \
   zsh-syntax-highlighting \
   zsh-autosuggestions \
+  ripgrep
 
 ##################
 # z command
