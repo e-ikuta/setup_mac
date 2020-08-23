@@ -5,6 +5,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=/usr/local/Cellar/vim/8.2.1500/bin:$PATH
 # <C-s>が効くようにする
 stty stop undef
+setopt noflowcontrol
 
 ####### nodeenv #######
 eval "$(nodenv init -)"
@@ -55,9 +56,8 @@ alias gb='git branch'
 alias gc='git commit -m'
 alias gd='git diff'
 alias go='git checkout'
+alias gsl='git stash list'
 alias be='bundle exec'
-alias rs='rails s'
-alias rc='rails c'
 alias reload='exec zsh -l'
 alias dc='docker-compose'
 alias ecu='ec2ssh update'
@@ -83,3 +83,7 @@ replace_rails () {
 
 ########## ga-tech github personal access token ###########
 export GITHUB_TOKEN=`cat ~/.secrets/github/personal_access_token`
+
+########## docker ############
+export DOCKER_CLIENT_TIMEOUT=120
+export COMPOSE_HTTP_TIMEOUT=120
