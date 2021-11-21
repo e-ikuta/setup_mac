@@ -3,13 +3,7 @@
 ####################
 # install packages
 ####################
-brew install \
-  vim \
-  nodenv \
-  rbenv \
-  zsh-syntax-highlighting \
-  zsh-autosuggestions \
-  ripgrep
+brew bundle
 
 ##################
 # z command
@@ -23,10 +17,3 @@ mv z .zsh.d
 ##################
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-##################
-# nerdtree
-##################
-brew tap homebrew/cask-fonts
-brew cask install font-hack-nerd-font
-# set terminal text to 'HacK Nerd Font'
