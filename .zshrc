@@ -179,10 +179,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 ######## backlog リリース対象チケット取得用 #######
 export BACKLOG_API_KEY=`cat ~/.secrets/backlog/api_key`
 
-echo '******* zsh settings loaded *******'
-
 ######### for RENOSY_FORM #########
 export AWS_DEFAULT_PROFILE=default
 
 ######## for brew ##########
 HOMEBREW_NO_AUTO_UPDATE=1 # 自動的に brew update しない
+
+
+
+
+
+echo '******* .zshrc loaded *******'
