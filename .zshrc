@@ -183,7 +183,7 @@ export BACKLOG_API_KEY=`cat ~/.secrets/backlog/api_key`
 export AWS_DEFAULT_PROFILE=default
 
 ######## for brew ##########
-HOMEBREW_NO_AUTO_UPDATE=1 # 自動的に brew update しない
+export HOMEBREW_NO_AUTO_UPDATE=1 # 自動的に brew update しない
 
 
 
