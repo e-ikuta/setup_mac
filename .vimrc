@@ -8,8 +8,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-rails'
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'jparise/vim-graphql'
 Plug 'mattn/emmet-vim'
 Plug 'Quramy/tsuquyomi'
@@ -19,10 +17,6 @@ Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 call plug#end()
-
-"""""" netrw """""
-set nocompatible
-filetype plugin on
 
 "*****************"
 "      color      "
@@ -42,12 +36,8 @@ hi link markdownError Normal
 "*****************"
 
 set nofixendofline
-let g:netrw_banner = 0
 set laststatus=2
 set statusline=%F
-let g:netrw_preview   = 1
-let g:netrw_liststyle = 3
-let g:netrw_winsize   = 30
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
 set number
@@ -58,10 +48,9 @@ set autoindent
 set smartindent
 set nrformats-=octal
 
-""""" nerdtree """"""
-let NERDTreeShowHidden=1
-set encoding=UTF-8
-map <C-e> :NERDTreeToggle<CR>
+
+""""" netrw """""
+let g:netrw_winsize = 25
 
 """"" emmet.vim """""
 let g:user_emmet_settings = {
@@ -115,6 +104,7 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>i gt
 nnoremap <Leader>j gT
+nnoremap <silent><C-e> :Vex<CR>
 
 cnoremap sv source ~/.vimrc<CR>
 cnoremap <C-p> <Up>
