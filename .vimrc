@@ -51,6 +51,7 @@ set nrformats-=octal
 
 """"" netrw """""
 let g:netrw_winsize = 25
+let g:netrw_banner = 0
 
 """"" emmet.vim """""
 let g:user_emmet_settings = {
