@@ -8,6 +8,9 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 # mactex
 export PATH=$PATH:/usr/local/texlive/2021/bin/universal-darwin
 
+####### ghq #######
+alias ghl='cd $(ghq root)/$(ghq list | peco)'
+
 ####### vim #######
 # <C-s>が効くようにする
 stty start undef
@@ -55,24 +58,31 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 ####### alias #######
 alias k9='kill -9'
+alias v='vim .'
 alias vz='vim ~/.zshrc'
 alias vv='vim ~/.vimrc'
 alias sz='source ~/.zshrc'
 alias va='vim ~/.aws/credentials'
 alias gl='git log'
+alias gpl='git pull'
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit -m'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias go='git checkout'
 alias gsl='git stash list'
 alias grh^='git reset head^'
 alias grh='git reset --hard head'
+alias gri='git rebase -i'
+alias ghb='gh browse'
 alias be='bundle exec'
 alias rm-cache="bundle exec rails r 'Rails.cache.clear'"
 alias reload='exec zsh -l'
 alias dc='docker-compose'
+alias da='docker attach'
+alias thrud_db='mysql -P 3026 -u root -h 127.0.0.1 --skip-password'
 alias ecu='ec2ssh update'
 alias ssm='aws ssm start-session --profile gadev --target $(grep -w Host ~/.ssh/config | awk '\''{print $2}'\'' | peco | head -n1 | awk -F "-" '\''{print $(NF-1) "-" $NF}'\'')'
 alias rails_db_set='bundle exec rails db:environment:set RAILS_ENV=development'
@@ -88,6 +98,9 @@ alias vn='vim /usr/local/etc/nginx'
 ########## function ############
 gsa () {
   git stash apply stash@{$1}
+}
+gsp () {
+  git stash pop stash@{$1}
 }
 grep_rails () {
   grep -rlI --exclude-dir={vendor,log,coverage,node_modules,tmp,public} "$1" "$2"/*
@@ -150,11 +163,15 @@ export GITHUB_ACCESS_TOKEN=`cat ~/.secrets/github/personal_access_token`
 #  brew services start mysql@5.7
 #Or, if you don't want/need a background service you can just run:
 #  /usr/local/opt/mysql@5.7/bin/mysql.server start
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
-export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
-export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+
+########### mysql5.7を使用時はここをコメントインする ##############
+# export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
+# export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
+# export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
+# export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+##################################################################
+
 #export DYLD_LIBRARY_PATH=/usr/local/opt/mysql/lib:$DYLD_LIBRARY_PATH
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -163,3 +180,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export BACKLOG_API_KEY=`cat ~/.secrets/backlog/api_key`
 
 echo '******* zsh settings loaded *******'
+
+######### for RENOSY_FORM #########
+export AWS_DEFAULT_PROFILE=default
+
+######## for brew ##########
+HOMEBREW_NO_AUTO_UPDATE=1 # 自動的に brew update しない
