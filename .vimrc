@@ -8,6 +8,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-rails'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'jparise/vim-graphql'
 Plug 'mattn/emmet-vim'
 Plug 'Quramy/tsuquyomi'
@@ -17,6 +19,10 @@ Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
 call plug#end()
+
+"""""" netrw """""
+set nocompatible
+filetype plugin on
 
 "*****************"
 "      color      "
@@ -48,10 +54,16 @@ set autoindent
 set smartindent
 set nrformats-=octal
 
-
 """"" netrw """""
 let g:netrw_winsize = 25
 let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_preview   = 1
+
+""""" nerdtree """"""
+let NERDTreeShowHidden=1
+set encoding=UTF-8
+map <C-e> :NERDTreeToggle<CR>
 
 """"" emmet.vim """""
 let g:user_emmet_settings = {
@@ -105,7 +117,6 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>i gt
 nnoremap <Leader>j gT
-nnoremap <silent><C-e> :Vex<CR>
 
 cnoremap sv source ~/.vimrc<CR>
 cnoremap <C-p> <Up>
