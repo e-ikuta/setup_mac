@@ -7,7 +7,7 @@ if test -f "$ZSHRC"; then
   echo "$ZSHRC exists."
 else
   ORIGINAL_ZSHRC=`readlink -f .zshrc`
-  ln -s "$ORIGINAL_ZSHRC" "$ZSHRC"
+  cp "$ORIGINAL_ZSHRC" "$ZSHRC"
 fi
 
 echo '===== add .vimrc ====='
@@ -16,7 +16,7 @@ if test -f "$VIMRC"; then
   echo "$VIMRC exists."
 else
   ORIGINAL_VIMRC=`readlink -f .vimrc`
-  ln -s "$ORIGINAL_VIMRC" "$VIMRC"
+  cp "$ORIGINAL_VIMRC" "$VIMRC"
 fi
 
 echo '===== install packages ====='
