@@ -18,7 +18,7 @@ else
   ORIGINAL_VIMRC=`readlink -f .vimrc`
   cp "$ORIGINAL_VIMRC" "$VIMRC"
 fi
-mkdir ~/tmp/vim
+mkdir -p ~/tmp/vim
 
 echo '===== install packages ====='
 brew bundle cleanup
