@@ -20,7 +20,7 @@ else
 fi
 
 echo '===== install packages ====='
-brew bundle
+brew bundle cleanup
 
 echo '===== install z command ====='
 cd ~
