@@ -185,8 +185,4 @@ export AWS_DEFAULT_PROFILE=default
 ######## for brew ##########
 export HOMEBREW_NO_AUTO_UPDATE=1 # 自動的に brew update しない
 
-
-
-
-
 echo '******* .zshrc loaded *******'
