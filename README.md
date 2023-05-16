@@ -7,3 +7,4 @@
 1. githubのセットアップを行う（https://docs.github.com/en/get-started/quickstart/set-up-git）
 1. gitを使用して、新PCに本リポジトリをclone
 1. 新PCでsetup.shを実行
+1. vim plugをインストールする
