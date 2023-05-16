@@ -21,7 +21,7 @@ fi
 mkdir -p ~/tmp/vim
 
 echo '===== install packages ====='
-brew bundle cleanup
+brew bundle cleanup --force
 
 echo '===== install z command ====='
 cd ~
