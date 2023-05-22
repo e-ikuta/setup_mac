@@ -18,6 +18,10 @@ setopt noflowcontrol
 eval "$(rbenv init -)"
 
 ####### packages #######
+# https://github.com/zsh-users/zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# https://github.com/zsh-users/zsh-syntax-highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # https://github.com/rupa/z
 source ~/.zsh.d/z.sh
 
@@ -96,7 +100,6 @@ aws_ssm () {
 ########## ga-tech personal access token ###########
 export GITHUB_TOKEN=`cat ~/.secrets/github/personal_access_token`
 export GITHUB_ACCESS_TOKEN=`cat ~/.secrets/github/personal_access_token`
-
 
 ######## backlog リリース対象チケット取得用 #######
 export BACKLOG_API_KEY=`cat ~/.secrets/backlog/api_key`

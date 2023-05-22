@@ -6,7 +6,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "sanemat/font"
-brew "awscli", link: false
+brew "awscli"
 brew "glib"
 brew "circleci"
 brew "harfbuzz"
