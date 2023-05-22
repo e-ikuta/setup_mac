@@ -8,3 +8,4 @@
 1. gitを使用して、新PCに本リポジトリをclone
 1. 新PCでsetup.shを実行
 1. vim plugをインストールする
+1. docker desktopをブラウザからインストール
