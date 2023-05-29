@@ -21,6 +21,7 @@ brew "peco"
 brew "pkg-config"
 brew "ruby-build"
 brew "rbenv"
+brew "ripgrep"
 brew "ruby"
 brew "terraform", link: false
 brew "tfenv"
