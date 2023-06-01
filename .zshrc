@@ -14,9 +14,6 @@ stty start undef
 stty stop undef
 setopt noflowcontrol
 
-####### rbenv ########
-eval "$(rbenv init -)"
-
 ####### packages #######
 # https://github.com/zsh-users/zsh-autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
