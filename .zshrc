@@ -5,9 +5,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_NO_AUTO_UPDATE=1 # 自動的に brew update しない
 
-####### ghq #######
-alias ghl='cd $(ghq root)/$(ghq list | peco)'
-
 ####### vim #######
 # <C-s>が効くようにする
 stty start undef
@@ -21,6 +18,9 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # https://github.com/rupa/z
 source ~/.zsh.d/z.sh
+
+eval "$(rbenv init - zsh)"
+eval "$(nodenv init -)"
 
 ####### prompt #######
 PROMPT='%F{magenta}%~ $ %f'
@@ -51,6 +51,7 @@ setopt share_history
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 ####### alias #######
+alias ghl='cd $(ghq root)/$(ghq list | peco)'
 alias v='vim .'
 alias vz='vim ~/.zshrc'
 alias vv='vim ~/.vimrc'
