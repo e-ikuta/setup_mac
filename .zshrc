@@ -96,14 +96,4 @@ aws_ssm () {
   aws ssm start-session --target $1
 }
 
-########## ga-tech personal access token ###########
-export GITHUB_TOKEN=`cat ~/.secrets/github/personal_access_token`
-export GITHUB_ACCESS_TOKEN=`cat ~/.secrets/github/personal_access_token`
-
-######## backlog リリース対象チケット取得用 #######
-export BACKLOG_API_KEY=`cat ~/.secrets/backlog/api_key`
-
-######### for RENOSY_FORM #########
-export AWS_DEFAULT_PROFILE=default
-
 echo '******* .zshrc loaded *******'
