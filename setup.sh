@@ -25,7 +25,7 @@ brew bundle
 
 echo '===== install z command ====='
 cd ~
-git clone git@github.com:rupa/z.git
+git clone https://github.com/rupa/z.git
 mv z .zsh.d
 
 echo '===== install vim plug ====='
